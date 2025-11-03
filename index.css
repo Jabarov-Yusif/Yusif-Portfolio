@@ -174,11 +174,11 @@ i {
 }
 
 .img-div2>img {
-    object-fit: cover;
-    width: 76%;
-    height: 90vh;
+       width: 70%;
+    height: 45vh;
     border-radius: 50%;
     transition: 0.5s;
+    object-fit: fill;
 }
 
 .main2>.text-div {
