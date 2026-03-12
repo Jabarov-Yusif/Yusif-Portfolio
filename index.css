@@ -174,7 +174,7 @@ i {
 }
 
 .img-div2>img {
-   width: 70%;
+     width: 70%;
     height: 45vh;
     border-radius: 50%;
     transition: 0.5s;
@@ -374,11 +374,12 @@ i {
 
 }
 
-.main4>.big-div>div>h1 {
+.main4>.big-div>div>a>h1 {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px;
+    color: black;
 }
 
 .main4>.big-div>div>span {
@@ -392,7 +393,7 @@ i {
     position: relative;
 }
 
-.overlay {
+a>.overlay {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -405,7 +406,7 @@ i {
     border-radius: 10px;
 }
 
-.main4>.big-div>div:hover .overlay {
+.main4>.big-div>div:hover a>.overlay {
     opacity: 3;
 }
 
@@ -686,7 +687,7 @@ i {
     border-radius: 4px 0 0 4px;
     outline: none;
     font-size: 14px;
-    width: 260px;
+    width: 264px;
 
 }
 
@@ -952,4 +953,5 @@ i {
         display: flex;
         text-align: center;
     }
+   
 }
