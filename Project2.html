@@ -372,6 +372,105 @@ input:focus, textarea:focus{border-color: rgba(45,226,230,.55)}
   .nav-links.open{display:flex}
   .burger{display:inline-flex}
 }
+/* EXTRA SMALL DEVICES (450px aşağı) */
+@media (max-width: 450px){
+
+  .container{
+    width: 94%;
+  }
+
+  .hero{
+    padding: 60px 0 30px;
+  }
+
+  .hero h1{
+    font-size: 28px;
+  }
+
+  .subtitle{
+    font-size: 14px;
+  }
+
+  .hero-actions{
+    flex-direction: column;
+  }
+
+  .hero-actions .btn{
+    width: 100%;
+  }
+
+  .hero-stats{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .stat{
+    width: 100%;
+  }
+
+  .mockup{
+    margin-top: 20px;
+  }
+
+  .section{
+    padding: 50px 0;
+  }
+
+  .section-head h2{
+    font-size: 24px;
+  }
+
+  .grid-3{
+    grid-template-columns: 1fr;
+  }
+
+  .price-card{
+    padding: 18px;
+  }
+
+  .price{
+    font-size: 26px;
+  }
+
+  .faq-q{
+    font-size: 14px;
+  }
+
+  .contact-left h2{
+    font-size: 24px;
+  }
+
+  .row{
+    grid-template-columns: 1fr;
+  }
+
+  input, textarea{
+    font-size: 14px;
+  }
+
+  .footer-flex{
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .nav{
+    padding: 10px 0;
+  }
+
+  .logo{
+    font-size: 18px;
+  }
+
+  .nav-actions .btn{
+    display: none; /* mobilde "Başla" gizlədik */
+  }
+
+  .nav-links{
+    width: 180px;
+    right: 2%;
+  }
+}
 
  </style>
 </head>
@@ -746,4 +845,3 @@ reveals.forEach(el => observer.observe(el));
  </script>
 </body>
 </html>
-
