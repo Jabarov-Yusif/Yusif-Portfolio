@@ -1,847 +1,510 @@
 <!DOCTYPE html>
-<html lang="az">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LuxWeb — Landing Page</title>
- <style>
-  :root{
-  --bg:#0b0f1a;
-  --card:#11182a;
-  --text:#e9eefc;
-  --muted:#a8b3d6;
-  --primary:#6d5efc;
-  --primary2:#2de2e6;
-  --border:rgba(255,255,255,.10);
-  --shadow: 0 20px 60px rgba(0,0,0,.35);
-}
-
-.light{
-  --bg:#f7f8ff;
-  --card:#ffffff;
-  --text:#0c1020;
-  --muted:#4b5675;
-  --border:rgba(0,0,0,.10);
-  --shadow: 0 18px 50px rgba(12,16,32,.12);
-}
-
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-}
-
-a{color:inherit;text-decoration:none}
-ul{list-style:none}
-
-.container{
-  width:min(1100px, 92%);
-  margin:auto;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:12px 18px;
-  border-radius:14px;
-  border:1px solid var(--border);
-  font-weight:700;
-  transition:.2s;
-  cursor:pointer;
-}
-.btn.small{padding:10px 14px;border-radius:12px;font-size:14px}
-.btn.primary{
-  background:linear-gradient(135deg, var(--primary), var(--primary2));
-  border:none;
-  color:#061018;
-}
-.btn.ghost{background:transparent}
-.btn:hover{transform:translateY(-2px)}
-.w100{width:100%}
-
-.header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(0,0,0,.25);
-  backdrop-filter: blur(12px);
-  border-bottom:1px solid var(--border);
-}
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 0;
-}
-.logo{
-  font-size:22px;
-  font-weight:900;
-  letter-spacing:.5px;
-}
-.logo span{color:var(--primary2)}
-.nav-links{
-  display:flex;
-  gap:22px;
-  align-items:center;
-}
-.nav-links a{
-  color:var(--muted);
-  font-weight:700;
-  transition:.2s;
-}
-.nav-links a:hover{color:var(--text)}
-
-.nav-actions{display:flex;gap:10px;align-items:center}
-.icon-btn{
-  border:1px solid var(--border);
-  background:transparent;
-  color:var(--text);
-  padding:10px 12px;
-  border-radius:12px;
-  cursor:pointer;
-}
-.burger{display:none}
-
-.hero{
-  position:relative;
-  padding:80px 0 50px;
-  overflow:hidden;
-}
-.hero-bg{
-  position:absolute;
-  inset:-40%;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(109,94,252,.35), transparent 45%),
-    radial-gradient(circle at 70% 60%, rgba(45,226,230,.25), transparent 50%);
-  filter: blur(30px);
-  z-index:-1;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap:34px;
-  align-items:center;
-}
-.badge{
-  display:inline-block;
-  padding:8px 12px;
-  border:1px solid var(--border);
-  border-radius:999px;
-  color:var(--muted);
-  font-weight:700;
-  margin-bottom:12px;
-}
-.hero h1{
-  font-size:46px;
-  line-height:1.1;
-  margin-bottom:14px;
-}
-.grad{
-  background:linear-gradient(135deg, var(--primary), var(--primary2));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-.subtitle{color:var(--muted);font-size:17px;margin-bottom:22px}
-
-.hero-actions{display:flex;gap:12px;margin-bottom:26px}
-.hero-stats{
-  display:flex;
-  gap:18px;
-}
-.stat{
-  background:rgba(255,255,255,.04);
-  border:1px solid var(--border);
-  padding:14px 16px;
-  border-radius:18px;
-  min-width:140px;
-}
-.stat h3{font-size:22px}
-.stat p{color:var(--muted);font-weight:700;font-size:14px}
-
-.mockup{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:26px;
-  overflow:hidden;
-  box-shadow: var(--shadow);
-}
-.mock-top{
-  display:flex;
-  gap:8px;
-  padding:12px 14px;
-  border-bottom:1px solid var(--border);
-}
-.mock-top span{
-  width:10px;height:10px;border-radius:50%;
-  background:rgba(255,255,255,.18);
-}
-.mock-body{padding:18px}
-.mock-body h4{font-size:18px;margin-bottom:4px}
-.mock-body p{color:var(--muted);margin-bottom:18px}
-.bars{display:grid;gap:10px;margin-bottom:18px}
-.bar{
-  height:12px;border-radius:999px;
-  background:linear-gradient(90deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
-}
-.cta-card{
-  background:rgba(109,94,252,.14);
-  border:1px solid rgba(109,94,252,.35);
-  padding:14px;
-  border-radius:20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-}
-
-.section{padding:70px 0}
-.section.alt{
-  background:rgba(255,255,255,.03);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-.section-head{
-  text-align:center;
-  margin-bottom:34px;
-}
-.section-head h2{font-size:34px;margin-bottom:6px}
-.section-head p{color:var(--muted);font-weight:700}
-
-.grid-3{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:18px;
-}
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  padding:20px;
-  border-radius:22px;
-  box-shadow: var(--shadow);
-}
-.card h3{margin-bottom:8px}
-.card p{color:var(--muted)}
-
-.price-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  padding:22px;
-  border-radius:26px;
-  box-shadow: var(--shadow);
-  position:relative;
-}
-.price-card.featured{
-  border:1px solid rgba(45,226,230,.5);
-  transform: translateY(-8px);
-}
-.tag{
-  position:absolute;
-  top:14px; right:14px;
-  padding:6px 10px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:900;
-  background:rgba(45,226,230,.15);
-  border:1px solid rgba(45,226,230,.35);
-}
-.price{font-size:34px;font-weight:900;margin:10px 0 14px}
-.price span{font-size:14px;color:var(--muted);font-weight:800}
-.price-card ul{display:grid;gap:10px;margin:16px 0 18px}
-.price-card li{color:var(--muted);font-weight:700}
-
-.faq{
-  width:min(850px, 100%);
-  margin:auto;
-  display:grid;
-  gap:12px;
-}
-.faq-item{
-  border:1px solid var(--border);
-  border-radius:18px;
-  overflow:hidden;
-  background:var(--card);
-}
-.faq-q{
-  width:100%;
-  text-align:left;
-  padding:16px 18px;
-  font-weight:900;
-  font-size:16px;
-  background:transparent;
-  color:var(--text);
-  border:none;
-  cursor:pointer;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.faq-a{
-  padding:0 18px;
-  color:var(--muted);
-  max-height:0;
-  overflow:hidden;
-  transition:.25s ease;
-}
-.faq-item.active .faq-a{
-  padding:0 18px 16px;
-  max-height:160px;
-}
-.icon{font-size:18px}
-
-.contact-grid{
-  display:grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap:20px;
-  align-items:start;
-}
-.contact-left h2{font-size:34px;margin-bottom:10px}
-.contact-left p{color:var(--muted);font-weight:700;margin-bottom:18px}
-.contact-info p{margin:8px 0;color:var(--muted);font-weight:800}
-
-.form{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:26px;
-  padding:20px;
-  box-shadow: var(--shadow);
-}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.field{display:grid;gap:6px;margin-bottom:12px}
-label{font-weight:900}
-input, textarea{
-  padding:12px 14px;
-  border-radius:14px;
-  border:1px solid var(--border);
-  background:transparent;
-  color:var(--text);
-  outline:none;
-}
-input:focus, textarea:focus{border-color: rgba(45,226,230,.55)}
-.error{color:#ff6b6b;font-weight:900;min-height:18px}
-.success{margin-top:10px;color:var(--primary2);font-weight:900}
-
-.footer{
-  padding:26px 0;
-  border-top:1px solid var(--border);
-}
-.footer-flex{
-  display:flex;
-  justify-content:space-between;
-  gap:14px;
-  align-items:center;
-  color:var(--muted);
-  font-weight:800;
-}
-.to-top{color:var(--muted)}
-.to-top:hover{color:var(--text)}
-
-.reveal{
-  opacity:0;
-  transform: translateY(18px);
-  transition: .6s ease;
-}
-.reveal.show{
-  opacity:1;
-  transform: translateY(0);
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px){
-  .hero-grid{grid-template-columns:1fr}
-  .hero h1{font-size:38px}
-  .contact-grid{grid-template-columns:1fr}
-  .grid-3{grid-template-columns:1fr}
-  .nav-links{
-    position:absolute;
-    top:64px;
-    right:4%;
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:14px;
-    flex-direction:column;
-    gap:14px;
-    width:220px;
-    display:none;
-  }
-  .nav-links.open{display:flex}
-  .burger{display:inline-flex}
-}
-/* EXTRA SMALL DEVICES (450px aşağı) */
-@media (max-width: 450px){
-
-  .container{
-    width: 94%;
-  }
-
-  .hero{
-    padding: 60px 0 30px;
-  }
-
-  .hero h1{
-    font-size: 28px;
-  }
-
-  .subtitle{
-    font-size: 14px;
-  }
-
-  .hero-actions{
-    flex-direction: column;
-  }
-
-  .hero-actions .btn{
-    width: 100%;
-  }
-
-  .hero-stats{
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .stat{
-    width: 100%;
-  }
-
-  .mockup{
-    margin-top: 20px;
-  }
-
-  .section{
-    padding: 50px 0;
-  }
-
-  .section-head h2{
-    font-size: 24px;
-  }
-
-  .grid-3{
-    grid-template-columns: 1fr;
-  }
-
-  .price-card{
-    padding: 18px;
-  }
-
-  .price{
-    font-size: 26px;
-  }
-
-  .faq-q{
-    font-size: 14px;
-  }
-
-  .contact-left h2{
-    font-size: 24px;
-  }
-
-  .row{
-    grid-template-columns: 1fr;
-  }
-
-  input, textarea{
-    font-size: 14px;
-  }
-
-  .footer-flex{
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .nav{
-    padding: 10px 0;
-  }
-
-  .logo{
-    font-size: 18px;
-  }
-
-  .nav-actions .btn{
-    display: none; /* mobilde "Başla" gizlədik */
-  }
-
-  .nav-links{
-    width: 180px;
-    right: 2%;
-  }
-}
-
- </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
 </head>
 
-<body>
-  <!-- NAVBAR -->
-  <header class="header" id="top">
-    <nav class="nav container">
-      <a class="logo" href="#top">Lux<span>Web</span></a>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#features">Xüsusiyyətlər</a></li>
-        <li><a href="#pricing">Qiymətlər</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Əlaqə</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <button class="icon-btn" id="themeBtn" title="Dark mode">
-          🌙
-        </button>
-        <button class="icon-btn burger" id="burger" aria-label="Menu">
-          ☰
-        </button>
-        <a class="btn primary" href="#contact">Başla</a>
-      </div>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-left reveal">
-        <p class="badge">🚀 Sürətli • Modern • Responsive</p>
-        <h1>
-          Biznesin üçün <span class="grad">peşəkar landing page</span>
-          hazırla və satışını artır!
-        </h1>
-        <p class="subtitle">
-          LuxWeb ilə 1 günə gözəl dizayn, sürətli yüklənmə və mobil uyğunluq.
-          Müştərilər üçün ideal təqdimat səhifəsi.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="#pricing">Planlara bax</a>
-          <a class="btn ghost" href="#features">Daha çox</a>
-        </div>
-
-        <div class="hero-stats">
-          <div class="stat">
-            <h3>+120</h3>
-            <p>Hazır layihə</p>
-          </div>
-          <div class="stat">
-            <h3>99%</h3>
-            <p>Mobil uyğunluq</p>
-          </div>
-          <div class="stat">
-            <h3>24/7</h3>
-            <p>Dəstək</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-right reveal">
-        <div class="mockup">
-          <div class="mock-top">
-            <span></span><span></span><span></span>
-          </div>
-          <div class="mock-body">
-            <h4>Demo nəticə</h4>
-            <p>Landing page preview</p>
-
-            <div class="bars">
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-            </div>
-
-            <div class="cta-card">
-              <p>🔥 Kampaniya: -30%</p>
-              <button class="btn small primary">İndi al</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-bg"></div>
-  </section>
-
-  <!-- FEATURES -->
-  <section class="section" id="features">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Niyə LuxWeb?</h2>
-        <p>Sadə, sürətli və satış yönümlü landing page.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card reveal">
-          <h3>⚡ Sürət</h3>
-          <p>Optimallaşdırılmış kod ilə səhifə tez açılır.</p>
-        </div>
-
-        <div class="card reveal">
-          <h3>📱 Responsive</h3>
-          <p>Telefon, planşet və PC-də ideal görünüş.</p>
-        </div>
-
-        <div class="card reveal">
-          <h3>🎯 Satış yönümlü</h3>
-          <p>CTA button, pricing və FAQ ilə conversion artır.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="section alt" id="pricing">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Qiymət Planları</h2>
-        <p>Özünə uyğun plan seç və başla.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="price-card reveal">
-          <h3>Starter</h3>
-          <p class="price">₼49 <span>/ 1 səhifə</span></p>
-          <ul>
-            <li>✔ Responsive dizayn</li>
-            <li>✔ 1 dəfə düzəliş</li>
-            <li>✔ 24 saat çatdırılma</li>
-          </ul>
-          <a class="btn ghost w100" href="#contact">Sifariş et</a>
-        </div>
-
-        <div class="price-card featured reveal">
-          <p class="tag">Ən çox satılan</p>
-          <h3>Pro</h3>
-          <p class="price">₼99 <span>/ 1 səhifə</span></p>
-          <ul>
-            <li>✔ Premium dizayn</li>
-            <li>✔ 3 dəfə düzəliş</li>
-            <li>✔ Form + validation</li>
-            <li>✔ 12 saat çatdırılma</li>
-          </ul>
-          <a class="btn primary w100" href="#contact">Sifariş et</a>
-        </div>
-
-        <div class="price-card reveal">
-          <h3>Business</h3>
-          <p class="price">₼149 <span>/ 1 səhifə</span></p>
-          <ul>
-            <li>✔ 2 dil dəstəyi</li>
-            <li>✔ SEO basic</li>
-            <li>✔ WhatsApp button</li>
-            <li>✔ 6 saat çatdırılma</li>
-          </ul>
-          <a class="btn ghost w100" href="#contact">Sifariş et</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section" id="faq">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Tez-tez verilən suallar</h2>
-        <p>Ən çox soruşulanlar.</p>
-      </div>
-
-      <div class="faq">
-        <div class="faq-item reveal">
-          <button class="faq-q">
-            Landing page neçə günə hazır olur?
-            <span class="icon">+</span>
-          </button>
-          <div class="faq-a">
-            Adətən 6-24 saat arası hazır olur (plan seçiminə görə).
-          </div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-q">
-            Hosting / domain daxil deyil?
-            <span class="icon">+</span>
-          </button>
-          <div class="faq-a">
-            İstəsən domain+hosting seçməyə kömək edirik, ayrıca ödəniş olur.
-          </div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-q">
-            Düzəliş edə bilərəm?
-            <span class="icon">+</span>
-          </button>
-          <div class="faq-a">
-            Bəli. Planlara uyğun olaraq 1-3 dəfə düzəliş daxildir.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section alt" id="contact">
-    <div class="container contact-grid">
-      <div class="contact-left reveal">
-        <h2>İndi sifariş et</h2>
-        <p>
-          Formu doldur, sənə WhatsApp / Email ilə cavab verək.
-        </p>
-
-        <div class="contact-info">
-          <p>📞 +994 XX XXX XX XX</p>
-          <p>📩 luxweb@gmail.com</p>
-          <p>📍 Bakı, Azərbaycan</p>
-        </div>
-      </div>
-
-      <form class="form reveal" id="contactForm">
-        <div class="row">
-          <div class="field">
-            <label>Ad</label>
-            <input type="text" id="name" placeholder="Adınız" />
-            <small class="error"></small>
-          </div>
-          <div class="field">
-            <label>Telefon</label>
-            <input type="text" id="phone" placeholder="+994..." />
-            <small class="error"></small>
-          </div>
-        </div>
-
-        <div class="field">
-          <label>Email</label>
-          <input type="email" id="email" placeholder="email@gmail.com" />
-          <small class="error"></small>
-        </div>
-
-        <div class="field">
-          <label>Mesaj</label>
-          <textarea id="message" rows="5" placeholder="Nə istəyirsiniz?"></textarea>
-          <small class="error"></small>
-        </div>
-
-        <button class="btn primary w100" type="submit">
-          Göndər
-        </button>
-
-        <p class="success" id="successMsg"></p>
-      </form>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-flex">
-      <p>© <span id="year"></span> LuxWeb. Bütün hüquqlar qorunur.</p>
-      <a href="#top" class="to-top">⬆ Yuxarı</a>
-    </div>
-  </footer>
-
- <script>
-  // YEAR
-document.getElementById("year").textContent = new Date().getFullYear();
-
-// MOBILE MENU
-const burger = document.getElementById("burger");
-const navLinks = document.getElementById("navLinks");
-
-burger.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-});
-
-// Close menu when click link
-document.querySelectorAll(".nav-links a").forEach(a => {
-  a.addEventListener("click", () => navLinks.classList.remove("open"));
-});
-
-// THEME (dark/light)
-const themeBtn = document.getElementById("themeBtn");
-const savedTheme = localStorage.getItem("theme");
-
-if (savedTheme === "light") {
-  document.body.classList.add("light");
-  themeBtn.textContent = "☀️";
-}
-
-themeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light");
-  const isLight = document.body.classList.contains("light");
-  localStorage.setItem("theme", isLight ? "light" : "dark");
-  themeBtn.textContent = isLight ? "☀️" : "🌙";
-});
-
-// FAQ Accordion
-document.querySelectorAll(".faq-item").forEach(item => {
-  const btn = item.querySelector(".faq-q");
-  btn.addEventListener("click", () => {
-    // close others
-    document.querySelectorAll(".faq-item").forEach(i => {
-      if (i !== item) i.classList.remove("active");
-    });
-
-    item.classList.toggle("active");
-    const icon = item.querySelector(".icon");
-    icon.textContent = item.classList.contains("active") ? "−" : "+";
-  });
-});
-
-// Contact Form Validation
-const form = document.getElementById("contactForm");
-const successMsg = document.getElementById("successMsg");
-
-function setError(inputId, msg) {
-  const field = document.getElementById(inputId).parentElement;
-  field.querySelector(".error").textContent = msg;
-}
-function clearError(inputId) {
-  const field = document.getElementById(inputId).parentElement;
-  field.querySelector(".error").textContent = "";
-}
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-
-  let ok = true;
-
-  if (name.length < 2) { setError("name", "Ad minimum 2 hərf olmalıdır"); ok = false; }
-  else clearError("name");
-
-  if (!phone.startsWith("+994") || phone.length < 13) { setError("phone", "Telefon +994 ilə başlamalıdır"); ok = false; }
-  else clearError("phone");
-
-  if (!email.includes("@") || !email.includes(".")) { setError("email", "Email düzgün deyil"); ok = false; }
-  else clearError("email");
-
-  if (message.length < 8) { setError("message", "Mesaj minimum 8 simvol olmalıdır"); ok = false; }
-  else clearError("message");
-
-  if (ok) {
-    successMsg.textContent = "✅ Mesaj göndərildi! Tezliklə əlaqə saxlanılacaq.";
-    form.reset();
-
-    setTimeout(() => {
-      successMsg.textContent = "";
-    }, 4000);
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-});
+  
+    .navbar-collapse {
+        gap: 40px;
+      
+    }
+    .navbar-nav>li{
+      margin: 14px;
+      font-weight: 500;
+      color: black;
+    }
+    .navbar-nav>li>a:hover{
+      cursor: pointer;
+      color: orangered;
+      font-weight:500;
+    }
 
-// Scroll reveal animation
-const reveals = document.querySelectorAll(".reveal");
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add("show");
-  });
-}, { threshold: 0.12 });
+    .btn{
+        width: 220px;
+        height: 60px;
+         background-color: white;
+      color: rgb(58, 58, 58);
+      font-size: 1.1rem;
+      font-weight: 400;
+      border: 1px solid orangered;
+    }
+    .back{
+      background-color: rgb(252, 249, 249);
+      
+      
+    }
+    .btn:hover{
+      cursor: pointer;
+     background-color: orangered;
+     color: white;
+     font-size: 1.1em;
+     font-weight: bold;
+    }
+    .btn2{
+       background-color: orangered;
+     color: white;
+     font-size: 1.1em;
+     font-weight: bold;
+     width: 220px;
+        height: 60px;
+        border: none;
+        border-radius: 5px;
+        margin-top: 30px;
+       
+    }
+    .divdiv{
+      padding: 70px;
+     
+    }
+    .divdiv>h1{
+      font-size: 4rem;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    .divdiv>p{
+      font-size: 1rem;
+      margin-top: 30px;
+        
+      
 
-reveals.forEach(el => observer.observe(el));
+    }
+    .divdiv>span{
+      color: orangered;
+       font-size: 1rem;
+      font-weight: 500;
 
- </script>
+    }
+    .text-div{
+      margin-top: 10%;
+    }
+    .text-div>h2{
+      font-size: 3rem;
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+   }
+    .text-div>p{
+      font-size: 1.1rem;
+      font-weight: 1rem;
+      margin-top: 30px;
+      text-align: center;
+    }
+    .text-div>span{
+      color: orangered;
+      font-size: 1rem;
+      font-weight: 500;
+      
+    }
+    
+   
+   
+    .back2{
+      background-image: url("https://preview.colorlib.com/theme/allfood/assets/img/hero/h1_hero.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+       min-width: 100%;
+     
+    }
+    .img-div{
+      margin-top: 30px;
+    }
+    .text-div2{
+     margin-top: 10%;
+     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .text-div2>h2{
+      font-size: 3rem;
+      margin-top: 20px;
+      text-align: center;
+      
+    
+    }
+.duyme{
+  display: flex;
+  flex-direction: column;
+  width: 182px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 45px;
+  border: 1px solid orangered;
+   color: rgb(58, 58, 58);
+      font-size: 1.1rem;
+      font-weight: bold;
+      background-color: white;
+      border-radius: 5px;
+
+
+}
+.duyme:hover{
+  cursor: pointer;
+  background-color: orangered;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.img-div2{
+  
+  margin-top: 20px;
+}
+.cumle>h2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+   
+.cumle>span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cumle{
+  margin-top: 70px;
+}
+
+.box{
+  display: flex;
+}
+.text-div3{
+  margin-top: 10%;
+}
+.divcik{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+  font-size: 18px;
+  margin: 4px;
+  margin-top: 30px;
+ 
+  
+}
+.divcik>button{
+  width: 100px;
+  height: 36px;
+  text-align: center;
+  border: none;
+  background-color: white;
+  
+}
+.divcik>button:hover{
+  cursor: pointer;
+  background-color: orangered;
+  transition: 0.2s;
+  color: white;
+  font-size: 18px;
+ 
+}
+
+.card img{
+    height:334px;
+    object-fit:cover;
+}
+
+.card{
+    border:none;
+}
+
+
+.card-body>h5{
+  margin-top: 20px;
+}
+
+.card-body:hover{
+  cursor: pointer;
+  color: white !important;
+  background-color: orangered;
+}
+.card-body>span{
+     font-size:14px;
+  
+}
+
+.text-divcik{
+  margin-top: 65px;
+}
+.child{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 40px; 
+    box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.05);
+    transition: 0.2s;
+    height:270px;
+    
+
+}
+.child>i{
+  font-size: 3rem;
+
+}
+.child:hover i{
+   cursor: pointer;
+    color: orangered;
+    transform: scale(1.3);
+    transition: 0.3s;
+}
+.child>h3{
+  margin-top: 20px;
+  font-size: 26px;
+}
+.child>span{
+  margin-top: 24px;
+}
+.bx{
+  margin-top: 60px;
+}
+@media(max-width:460px){
+  .divdiv{
+    padding: 10px;
+   
+  }
+  .back2{
+    max-width: 100%;
+  }
+  .bx{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .divcik{
+    gap: 40px;
+    
+  }
+ 
+}
+
+            
+
+
+  
+
+
+  
+    
+    
+
+   
+</style>
+
+<body>
+
+
+    <div class="container-fluid p-0 back">
+        <nav class="navbar navbar-expand-lg navbar-light p-3">
+            <a class="navbar-brand" href="#"><img src="https://preview.colorlib.com/theme/allfood/assets/img/logo/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Contact</a>
+                    </li>
+                </ul>
+                <button type="button"  class="btn btn-outline ">Order online</button>
+            </div>
+        </nav>
+        
+    </div>
+    <div class="container  back2">
+         <div class="row rw">
+               <div class="  col-12 col-lg-6 divdiv ">
+            <span class="">Discover Your Teste</span>
+            <h1>We belive good food offer great smile</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque iure accusamus distinctio? Placeat, doloribus Lorem, ipsum dolor.</p>
+            <button type="button" class="btn2 ">Resurvation</button>
+          </div>
+    </div>
+     </div>
+
+     <div class="container">
+      <div class="row">
+            <div class=" col-12 col-lg-6  text-div">
+              <span class="d-flex align-items-center justify-content-center text-align-center">Discover Your Test</span>
+              <h2>We Provide Good Food <br> For Your Family!</h2>
+              <p>Ut enim acgsd minim veniam, quxcis nostrud exercitation ullamco laboris nisi ufsit aliquip ex ea commodo consequat is aute irure m, quis nostrud exer.</p>
+              
+            </div>
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center img-div">
+              <img src="https://preview.colorlib.com/theme/allfood/assets/img/gallery/about.png" alt="">
+            </div>
+          </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class=" col-12 col-lg-6 d-flex align-items-center justify-content-center  img-div2">
+          <img src="https://preview.colorlib.com/theme/allfood/assets/img/gallery/about2.png" alt="">
+        </div>
+        <div class=" col-lg-6 text-div2">
+          <span class="d-flex align-items-center justify-content-center text-align-center" style="color: orangered; font-size: 1.rem; font-weight: 500;">About Our Restaurant</span>
+          <h2>We Provide Good Food <br> For Your Family!</h2>
+          <p style="margin-top: 42px;text-align: center;">Ut enim acgsd minim veniam, quxcis nostrud exercitation ullamco laboris nisi ufsit aliquip ex ea commodo consequat is aute irure m, quis nostrud exer</p>
+          <span style="text-align: center; text-align: center; display: flex;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected our, or randomised words which don't look even slightly believab If you are going to use a passage.</span>
+          <button class=" duyme">Learn more</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="text-div3">
+          <span style="font-size: 17px; color: orangered; font-weight: 500;" class="d-flex align-items-center justify-content-center text-align-center">Our Offerd Menu</span>
+          <h1 style="font-size: 3rem; margin-top: 2%; text-align: center;" class="d-flex align-items-center text-align-center justify-content-center">Some Trendy And Popular <br> Courses Offerd</h1>
+
+        </div>
+        <div class="row ">
+            <div class="divcik">
+                  <button>
+
+              Special
+
+                  </button>
+          <button>
+              
+            Lunch
+          </button>
+          <button>
+              Brakefirst
+          </button>
+          <button>
+             Dinner
+          </button>
+            </div>
+               
+             
+            
+        
+        
+        </div>
+      </div>
+      
+    </div>
+   
+    </div>
+    <div class="container">
+    <div class="row g-4">
+
+        
+        <div class="col-md-4 bx">
+            <div class="card shadow-sm">
+                <img src="https://preview.colorlib.com/theme/allfood/assets/img/gallery/blog1.png" class="card-img-top">
+                <div class="card-body">
+                    <span>23 DEC, 2020</span>
+                    <h5>Addiction When Food Plate Becomes</h5>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 bx">
+            <div class="card shadow-sm">
+                <img src="	https://preview.colorlib.com/theme/allfood/assets/img/gallery/blog2.png" class="card-img-top">
+                <div class="card-body">
+                     <span>23 DEC, 2020</span>
+                    <h5>Addiction When Food Plate Becomes</h5>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 bx">
+            <div class="card shadow-sm">
+                <img src="	https://preview.colorlib.com/theme/allfood/assets/img/gallery/blog3.png" class="card-img-top">
+                <div class="card-body">
+                     <span>23 DEC, 2020</span>
+                    <h5>Addiction When Food Plate Becomes</h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="text-divcik">
+      <span style="color: orangered; font-size: 18px;" class="d-flex align-items-center justify-content-center">Servicees We Offer</span>
+      <h2 style="font-size: 42px; margin-top: 17px;" class="d-flex align-items justify-content-center">Our Best Services</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 child">
+        <i class="fa-solid fa-kitchen-set"></i>
+        <h3>Best Chef</h3>
+        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</span>
+    </div>
+    <div class="col-md-4 child">
+      <i class="fa-solid fa-plate-wheat"></i>
+      <h3>Quality Food</h3>
+      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</span>
+    </div>
+    <div class="col-md-4  child">
+        <i class="fa-solid fa-kitchen-set"></i>
+  
+      <h3>Perfect Cook</h3>
+        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</span>
+    </div>
+  </div>
+
+
+ 
+  
+    
+
+
+
+    
+    
+
+    
+     
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
 </body>
+
 </html>
