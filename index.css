@@ -955,3 +955,9 @@ a>.overlay {
     }
    
 }
+@media(max-width:380px){
+    .main2>.img-div2>img{
+        height: 200px;
+
+    }
+}
