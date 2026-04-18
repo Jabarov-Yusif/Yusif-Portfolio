@@ -23,7 +23,7 @@ header>.nav-texts>ul {
     align-items: center;
     justify-content: center;
     list-style: none;
-    gap: 90px;
+     gap: 64px;
     margin-top: 20px;
 
 
@@ -40,9 +40,12 @@ z-index: 99;
 }
 
 header>.nav-texts>ul>li>a {
-    font-size: small;
-    font-weight: 570;
-    color: #434343;
+     font-size: 14px;
+     font-weight: 570;
+     color: #434343;
+     text-decoration: none;
+     transform: scale(2);
+     transition: 0.4s;
     
     
 
@@ -71,7 +74,7 @@ header .nav-bars {
 header>.nav-texts>ul>li>a:hover {
     cursor: pointer;
     color: #8490ff;
-    transform: scale(1.3);
+    transform: scale(2);
     transition: 0.4s;
 }
 
