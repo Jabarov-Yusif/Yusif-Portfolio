@@ -1,3 +1,4 @@
+// 1. Owl Carousel Initialization
 $('.carusel').owlCarousel({
     margin: 10,
     loop: true,
@@ -17,16 +18,28 @@ $('.carusel').owlCarousel({
     }
 });
 
+// 2. Mobile Menu Toggle & Scroll Fix
 $(".nav-bars").click(function () {
-    $(".nav-menu").slideToggle();
+    $(".nav-menu").toggleClass("active");
+    $("body").toggleClass("menu-open");
+    
+    // Scroll vəziyyətini yoxlayıb tənzimləyirik
+    if ($("body").hasClass("menu-open")) {
+        $("body").css("overflow", "hidden");
+    } else {
+        $("body").css("overflow", "auto");
+    }
 });
 
-$(".nav-menu a").click(function () {
-    $(".nav-menu").slideUp();
+// Menyudakı linklərə və ya bağlama düyməsinə kliklədikdə menyu bağlanır və scroll bərpa olunur
+$(".close-menu, .nav-menu a").click(function () {
+    $(".nav-menu").removeClass("active");
+    $("body").removeClass("menu-open");
+    $("body").css("overflow", "auto"); // Scroll-u birbaşa aktivləşdiririk
 });
 
+// 3. Dark Mode Toggle & Icon Switch
 $(".theme-btn").click(function () {
-
     $("body").toggleClass("dark");
 
     if ($("body").hasClass("dark")) {
@@ -38,11 +51,10 @@ $(".theme-btn").click(function () {
             .removeClass("fa-sun")
             .addClass("fa-moon");
     }
-
 });
 
+// 4. Header Shrink on Scroll
 $(window).scroll(function () {
-
     if ($(window).scrollTop() > 50) {
         $("header").css({
             padding: "10px 20px"
@@ -52,30 +64,4 @@ $(window).scroll(function () {
             padding: "20px"
         });
     }
-
-});
-
-
-
-
-
-$(".nav-bars").click(function(){
-
-    $(".nav-menu").addClass("active");
-    $("body").addClass("menu-open");
-
-});
-
-$(".close-menu").click(function(){
-
-    $(".nav-menu").removeClass("active");
-    $("body").removeClass("menu-open");
-
-});
-
-$(".nav-menu a").click(function(){
-
-    $(".nav-menu").removeClass("active");
-    $("body").removeClass("menu-open");
-
 });
