@@ -16,7 +16,6 @@ $('.carusel').owlCarousel({
             nav: false
         }
     }
-  
 });
 
 // 2. Mobile Menu Toggle & Scroll Fix
