@@ -1,335 +1,1179 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yusif Jabarov - Portfolio</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
-        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
-        integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
-        integrity="sha512-Dm5UxqUSgNd93XG7eseoOrScyM1BVs65GrwmavP0D0DujOA8mjiBfyj71wmI2VQZKnnZQsSWWsxDKNiQIqk8sQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yusif Jabarov - Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+        integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+        integrity="sha512-Dm5UxqUSgNd93XG7eseoOrScyM1BVs65GrwmavP0D0DujOA8mjiBfyj71wmI2VQZKnnZQsSWWsxDKNiQIqk8sQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        header>.nav-texts>ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            gap: 64px;
+            margin-top: 20px;
+        }
+
+        .nav-texts {
+            width: 100%;
+            position: fixed;
+            left: 17%;
+            top: 0;
+            z-index: 99;
+            margin-top: 5px;
+        }
+
+        header>.nav-texts>ul>li>a {
+            font-size: 14px;
+            font-weight: 570;
+            color: #434343;
+            text-decoration: none;
+            transform: scale(2);
+            transition: 0.4s;
+            position: relative;
+        }
+
+        header>.nav-texts>ul>li>a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background: #8490ff;
+            transition: 0.4s;
+        }
+
+        header>.nav-texts>ul>li>a:hover::after {
+            width: 100%;
+        }
+
+        header .nav-bars {
+            display: none;
+        }
+
+        .nav-logo>h1 {
+            font-size: 1.3rem;
+            color: rgb(132, 132, 132);
+            transition: 0.2s;
+        }
+
+        .nav-logo>h1:hover {
+            cursor: pointer;
+            color: #8490ff;
+        }
+
+        header>.nav-texts>ul>li>a:hover {
+            cursor: pointer;
+            color: #8490ff;
+            transform: scale(2);
+            transition: 0.4s;
+        }
+
+        .theme-btn {
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #8490ff;
+        }
+
+        .main1 {
+            width: 100%;
+            background-color: #F9F9FF;
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 50px;
+        }
+
+        .main1>.divson {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .img-div {
+            width: 50%;
+            text-align: end;
+        }
+
+        .img-div>img {
+            object-fit: cover;
+            width: 70%;
+            height: 70%;
+            border-radius: 50%;
+            transition: 0.5s;
+        }
+
+        .img-div>img:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        .main1>.divson>h1 {
+            margin-top: 15px;
+            font-size: 2.4rem;
+        }
+
+        .main1>.divson>span {
+            font-size: 1rem;
+            color: #777777;
+        }
+
+        .main1>.divson>button {
+            margin-top: 20px;
+            width: 151px;
+            height: 43px;
+            border: none;
+            background-color: #818df9;
+            color: white;
+            font-weight: bold;
+            transition: 0.5s;
+        }
+
+        .main1>.divson>button:hover {
+            cursor: pointer;
+            box-shadow: 6px 6px 6px rgb(75, 160, 245);
+            transform: scale(1.1);
+        }
+
+        .main1>.divson>p {
+            color: #222222;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        i {
+            font-size: 1.4rem;
+        }
+
+        .main2 {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px;
+        }
+
+        .img-div2 {
+            width: 45%;
+            display: flex;
+        }
+
+        .img-div2>img {
+            width: 70%;
+            height: 45vh;
+            border-radius: 50%;
+            transition: 0.5s;
+            object-fit: fill;
+        }
+
+        .img-div2>img:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        .main2>.text-div {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        .main2>.text-div>span {
+            color: #777777;
+            font-size: 1.2rem;
+        }
+
+        .main2>.text-div>p {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .main2>.text-div>h1 {
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+
+        .main2>.text-div>button {
+            margin-top: 24px;
+            width: 151px;
+            height: 43px;
+            border-radius: 3px;
+            border: none;
+            background-color: #818df9;
+            color: white;
+            font-weight: bold;
+            transition: 0.5s;
+        }
+
+        .main2>.text-div>button:hover {
+            cursor: pointer;
+            box-shadow: 6px 6px 6px rgb(75, 160, 245);
+            transform: scale(1.1);
+        }
+
+        .main3 {
+            width: 100%;
+            background-color: white;
+            margin-top: 20px;
+            padding: 30px;
+        }
+
+        .main3 .text {
+            text-align: center;
+        }
+
+        .text>h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.6rem;
+        }
+
+        .text>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            color: #777777;
+            font-size: 1rem;
+        }
+
+        .div1 {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .div1>div {
+            width: 30%;
+            padding: 25px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .div1>div>h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-size: 1.3rem;
+        }
+
+        .div1>div>i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .div1>div>span {
+            color: #777777;
+            font-size: 1rem;
+        }
+
+        .div1>div:hover {
+            cursor: pointer;
+            color: #818df9;
+            transform: scale(1.1);
+        }
+
+        .main4 {
+            width: 100%;
+        }
+
+        .main4>.text1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 70px;
+            gap: 15px;
+        }
+
+        .main4>.text1>h1 {
+            font-size: 2.2rem;
+        }
+
+        .main4>.text1>span {
+            font-size: 1rem;
+            color: #777777;
+        }
+
+        .main4>.big-div {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .main4>.big-div>div {
+            width: 30%;
+            position: relative;
+        }
+
+        .main4>.big-div>div>.card-img {
+            width: 100%;
+            height: 40vh;
+            position: relative;
+        }
+
+        .main4>.big-div>div>.card-img img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .main4>.big-div>div>h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            color: black;
+        }
+
+        .main4>.big-div>div>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777777;
+        }
+
+        a>.overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #818df9;
+            z-index: 10;
+            transition: 0.3s;
+            opacity: 0;
+            border-radius: 10px;
+        }
+
+        .main4>.big-div>div:hover a>.overlay {
+            opacity: 0.5;
+        }
+
+        .blog-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 350px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 226px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px 0 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .author img {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+
+        .meta {
+            display: flex;
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        .blog-card h3 {
+            font-size: 16px;
+            font-weight: bold;
+            padding: 15px 20px 5px 20px;
+            text-transform: uppercase;
+            color: #222;
+        }
+
+        .blog-card h3:hover {
+            cursor: pointer;
+            color: #818df9;
+            transition: 0.3s;
+        }
+
+        .blog-card p {
+            font-size: 14px;
+            color: #666;
+            padding: 0 20px 20px 20px;
+        }
+
+        .text3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .text3>span {
+            padding: 20px;
+        }
+
+        .text3>h1 {
+            font-size: 2.2rem;
+        }
+
+        .footer {
+            padding: 60px 20px;
+            background-color: #04061C;
+            margin-top: 24px;
+        }
+
+        .footer-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-column>h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-column>p {
+            line-height: 1.6;
+            font-size: 1rem;
+            color: #aaa;
+        }
+
+        .footer-column .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+            font-size: 14px;
+            width: 264px;
+        }
+
+        .newsletter-form button {
+            background-color: #7d89fa;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 0 4px 4px 0;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .social-icons a {
+            color: #fff;
+            margin-right: 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+            padding: 2px;
+        }
+
+        .social-icons a:hover {
+            color: #7d89fa;
+        }
+
+        .wrapper {
+            background: #F9F9FF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper .carusel {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+        }
+
+        .carusel .cart {
+            color: black;
+            margin: 30px;
+            background-color: white;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: 0.5s;
+        }
+
+        .carusel .cart>p {
+            color: #777777;
+        }
+
+        .carusel .cart:hover {
+            cursor: pointer;
+            color: #818df9;
+            transition: 0.3s;
+        }
+
+        .carusel .cart img {
+            width: 150px;
+            border-radius: 50%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .owl-carousel .owl-item img {
+            width: 50px !important;
+            height: 50px;
+        }
+
+        .owl-dots {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .owl-dot {
+            display: none;
+            height: 20px;
+            width: 50px;
+            background-color: rgba(252, 112, 18, 0.623) !important;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 99;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu {
+            width: 300px;
+            height: 100vh;
+            background-color: #000;
+            position: fixed;
+            top: 0;
+            left: -300px;
+            z-index: 9999;
+            transition: 0.4s ease-in-out;
+            overflow-y: auto;
+            opacity: 0.95;
+        }
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+        .nav-menu>ul {
+            list-style: none;
+            text-align: left;
+            padding-top: 40px;
+        }
+
+        .nav-menu>ul>li>a {
+            display: flex;
+            flex-direction: column;
+            margin: 30px;
+            color: white;
+            font-weight: 800;
+            font-size: small;
+            transition: 0.3s;
+        }
+
+        .nav-menu>ul>li>a:hover {
+            cursor: pointer;
+            color: #8490ff;
+        }
+
+        body {
+            transition: 0.4s;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        body.dark {
+            background: #121212;
+            color: white;
+        }
+
+        body.dark header {
+            background: rgba(18, 18, 18, .9);
+        }
+
+        body.dark .main1,
+        body.dark .main2,
+        body.dark .main3,
+        body.dark .main4,
+        body.dark .main6,
+        body.dark .wrapper {
+            background: #1e1e1e;
+        }
+
+        body.dark .blog-card,
+        body.dark .cart,
+        body.dark .div1 div {
+            background: #252525;
+            color: white;
+        }
+
+        body.dark h1,
+        body.dark p,
+        body.dark a {
+            color: white !important;
+        }
+
+        body.dark span {
+            color: #d0d0d0 !important;
+        }
+
+        @media(max-width:991px) {
+            header .nav-texts {
+                display: none;
+            }
+
+            header .nav-bars {
+                display: block;
+            }
+
+            .div1>div {
+                width: 47%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .big-div {
+                display: flex;
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .main4>.big-div>div {
+                width: 100%;
+            }
+
+            .main1 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .main1>.divson {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .img-div {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .main2 {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            .main2>.img-div2 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 30px;
+                width: 100%;
+            }
+
+            .main2>.text-div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media(max-width:576px) {
+            .div1>div {
+                width: 100%;
+            }
+
+            .main4>.text1 {
+                padding: 25px;
+                text-align: center;
+            }
+        }
+
+        @media(max-width:380px) {
+            .main2>.img-div2>img {
+                height: 200px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <header>
-        <div class="theme-btn">
-            <i class="fa-solid fa-moon"></i>
-        </div>
-        <div class="nav-texts">
-            <ul>
-                <li><a href="">HOME</a></li>
-                <li><a href="#main2">ABOUT</a></li>
-                <li><a href="#main3">SERVICES</a></li>
-                <li><a href="">PORTFOLIO</a></li>
-                <li><a href="#main6">BLOG</a></li>
-                <li><a href="#footer">CONTACT</a></li>
-            </ul>
-        </div>
-        <div class="nav-bars">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-    </header>
+    <header>
+        <div class="theme-btn">
+            <i class="fa-solid fa-moon"></i>
+        </div>
+        <div class="nav-texts">
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="#main2">ABOUT</a></li>
+                <li><a href="#main3">SERVICES</a></li>
+                <li><a href="">PORTFOLIO</a></li>
+                <li><a href="#main6">BLOG</a></li>
+                <li><a href="#footer">CONTACT</a></li>
+            </ul>
+        </div>
+        <div class="nav-bars">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
 
-    <!-- MOBİL MENYU BİRBAŞA BURADA YERLƏŞİR -->
-    <nav class="nav-menu">
-        <ul>
-            <li><a href="">HOME</a></li>
-            <li><a href="#main2">ABOUT</a></li>
-            <li><a href="#main3">SERVICES</a></li>
-            <li><a href="">PORTFOLIO</a></li>
-            <li><a href="#main6">BLOG</a></li>
-            <li><a href="#footer">CONTACT</a></li>
-        </ul>
-    </nav>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="#main2">ABOUT</a></li>
+            <li><a href="#main3">SERVICES</a></li>
+            <li><a href="">PORTFOLIO</a></li>
+            <li><a href="#main6">BLOG</a></li>
+            <li><a href="#footer">CONTACT</a></li>
+        </ul>
+    </nav>
 
-    <section>
-        <main class="main1">
-            <div class="divson">
-                <p>THIS ME</p>
-                <h1>YUSIF JABAROV</h1>
-                <span>Hello, my name is Yusif. I am 20 years old. I live in Buzovna village of Baku. </span>
-                <button>DISCOVER NOW</button>
-            </div>
-            <div class="img-div">
-                <img src="Gemini_Generated_Image_mk0j6mk0j6mk0j6m.png" alt="Yusif Jabarov">
-            </div>
-        </main>
+    <section>
+        <main class="main1">
+            <div class="divson">
+                <p>THIS ME</p>
+                <h1>YUSIF JABAROV</h1>
+                <span>Hello, my name is Yusif. I am 20 years old. I live in Buzovna village of Baku. </span>
+                <button>DISCOVER NOW</button>
+            </div>
+            <div class="img-div">
+                <img src="Gemini_Generated_Image_mk0j6mk0j6mk0j6m.png" alt="Yusif Jabarov">
+            </div>
+        </main>
 
-        <main class="main2" id="main2">
-            <div class="img-div2">
-                <img src="WhatsApp Image 2026-08-20 at 17.02.49.jpeg" alt="Personal Details">
-            </div>
-            <div class="text-div">
-                <p>ABOUT ME</p>
-                <h1>PERSONAL DETAILS</h1>
-                <span>My name is Yusif. I was born on December 25, 2006, in the village of Buzovna, Baku. I studied at
-                    School No. 125, and now I am studying at the Baku State Vocational Education Center for Culture and
-                    Arts. I am currently majoring in "Computer Networks" at that school.</span>
-                <button>VIEW FULL DETAILS</button>
-            </div>
-        </main>
+        <main class="main2" id="main2">
+            <div class="img-div2">
+                <img src="WhatsApp Image 2026-08-20 at 17.02.49.jpeg" alt="Personal Details">
+            </div>
+            <div class="text-div">
+                <p>ABOUT ME</p>
+                <h1>PERSONAL DETAILS</h1>
+                <span>My name is Yusif. I was born on December 25, 2006, in the village of Buzovna, Baku. I studied at
+                    School No. 125, and now I am studying at the Baku State Vocational Education Center for Culture and
+                    Arts. I am currently majoring in "Computer Networks" at that school.</span>
+                <button>VIEW FULL DETAILS</button>
+            </div>
+        </main>
 
-        <main class="main3" id="main3">
-            <div class="text">
-                <h1>My Offered Services</h1>
-                <span>At about this time of year, some months after New Year’s resolutions have been made and kept, or
-                    made and neglected.</span>
-            </div>
-            <div class="div1">
-                <div>
-                    <i class="fa-solid fa-chart-simple"></i>
-                    <h1>Web Design</h1>
-                    <span>“It is not because things are difficult that we do not dare; it is because we do not dare that
-                        they are difficult.they are difficult.”</span>
-                </div>
-                <div>
-                    <i class="fa-solid fa-desktop"></i>
-                    <h1>Web Development</h1>
-                    <span>If you are an entrepreneur, you know that your success cannot depend on the opinions of
-                        others. Like the wind, opinions</span>
-                </div>
-                <div>
-                    <i class="fa-solid fa-camera"></i>
-                    <h1>Photography</h1>
-                    <span>Do you want to be even more successful? Learn to love learning and growth. The more effort you
-                        put into improving your skills.</span>
-                </div>
-                <div>
-                    <i class="fa-regular fa-image"></i>
-                    <h1>Clipping Path</h1>
-                    <span>Hypnosis quit smoking methods maintain caused quite a stir in the medical world over the last
-                        two decades. There is a lot of argument.</span>
-                </div>
-                <div>
-                    <i class="fa-solid fa-tablet-screen-button"></i>
-                    <h1>Apps Interface</h1>
-                    <span>Do you sometimes have the feeling that you’re running into the same obstacles over and over
-                        again? Many of my conflicts.</span>
-                </div>
-                <div>
-                    <i class="fa-solid fa-rocket"></i>
-                    <h1>Graphic Design</h1>
-                    <span>You’ve heard the expression, “Just believe it and it will come.” Well, technically, that is
-                        true, however, ‘believing’ is not just thinking that.</span>
-                </div>
-            </div>
-        </main>
+        <main class="main3" id="main3">
+            <div class="text">
+                <h1>My Offered Services</h1>
+                <span>At about this time of year, some months after New Year’s resolutions have been made and kept, or
+                    made and neglected.</span>
+            </div>
+            <div class="div1">
+                <div>
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <h1>Web Design</h1>
+                    <span>“It is not because things are difficult that we do not dare; it is because we do not dare that
+                        they are difficult.they are difficult.”</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-desktop"></i>
+                    <h1>Web Development</h1>
+                    <span>If you are an entrepreneur, you know that your success cannot depend on the opinions of
+                        others. Like the wind, opinions</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-camera"></i>
+                    <h1>Photography</h1>
+                    <span>Do you want to be even more successful? Learn to love learning and growth. The more effort you
+                        put into improving your skills.</span>
+                </div>
+                <div>
+                    <i class="fa-regular fa-image"></i>
+                    <h1>Clipping Path</h1>
+                    <span>Hypnosis quit smoking methods maintain caused quite a stir in the medical world over the last
+                        two decades. There is a lot of argument.</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-tablet-screen-button"></i>
+                    <h1>Apps Interface</h1>
+                    <span>Do you sometimes have the feeling that you’re running into the same obstacles over and over
+                        again? Many of my conflicts.</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-rocket"></i>
+                    <h1>Graphic Design</h1>
+                    <span>You’ve heard the expression, “Just believe it and it will come.” Well, technically, that is
+                        true, however, ‘believing’ is not just thinking that.</span>
+                </div>
+            </div>
+        </main>
 
-        <main class="main4">
-            <div class="text1">
-                <h1>Our Latest Featured Projects</h1>
-                <span>Who are in extremely love with eco friendly system.</span>
-            </div>
-            <div class="big-div">
-                <div>
-                    <div class="card-img">
-                        <img src="https://ecampusontario.pressbooks.pub/app/uploads/sites/2109/2021/11/programming-gb0e197598_1920.jpg"
-                            alt="Project 1">
-                        <a href="Project.html">
-                            <div class="overlay"></div>
-                        </a>
-                    </div>
-                    <h1>Project 1</h1>
-                    <span>Programmer Code</span>
-                </div>
-                <div>
-                    <div class="card-img">
-                        <img src="https://ecampusontario.pressbooks.pub/app/uploads/sites/2109/2021/11/programming-gb0e197598_1920.jpg"
-                            alt="Project 2">
-                        <a href="Project2.html">
-                            <div class="overlay"></div>
-                        </a>
-                    </div>
-                    <h1>Project 2</h1>
-                    <span>Programmer Code</span>
-                </div>
-                <div>
-                    <div class="card-img">
-                        <img src="https://ecampusontario.pressbooks.pub/app/uploads/sites/2109/2021/11/programming-gb0e197598_1920.jpg"
-                            alt="Project 3">
-                        <a href="">
-                            <div class="overlay"></div>
-                        </a>
-                    </div>
-                    <h1>Project 3</h1>
-                    <span>Web Design</span>
-                </div>
-            </div>
-        </main>
+        <main class="main4">
+            <div class="text1">
+                <h1>Our Latest Featured Projects</h1>
+                <span>Who are in extremely love with eco friendly system.</span>
+            </div>
+            <div class="big-div">
+                <div>
+                    <div class="card-img">
+                        <img src="https://ecampusontario.pressbooks.pub/app/uploads/sites/2109/2021/11/programming-gb0e197598_1920.jpg"
+                            alt="Project 1">
+                        <a href="Project.html">
+                            <div class="overlay"></div>
+                        </a>
+                    </div>
+                    <h1>Project 1</h1>
+                    <span>Programmer Code</span>
+                </div>
+                <div>
+                    <div class="card-img">
+                        <img src="https://ecampusontario.pressbooks.pub/app/uploads/sites/2109/2021/11/programming-gb0e197598_1920.jpg"
+                            alt="Project 2">
+                        <a href="Project2.html">
+                            <div class="overlay"></div>
+                        </a>
+                    </div>
+                    <h1>Project 2</h1>
+                    <span>Programmer Code</span>
+                </div>
+                <div>
+                    <div class="card-img">
+                        <img src="https://ecampusontario.pressbooks.pub/app/uploads/sites/2109/2021/11/programming-gb0e197598_1920.jpg"
+                            alt="Project 3">
+                        <a href="">
+                            <div class="overlay"></div>
+                        </a>
+                    </div>
+                    <h1>Project 3</h1>
+                    <span>Web Design</span>
+                </div>
+            </div>
+        </main>
 
-        <div class="container-fluid wrapper" style="height: 60vh;">
-            <div class="carusel owl-carousel">
-                <div class="cart card-1">
-                    <img src="Screenshot 2025-05-30 014847.png" alt="Vidadi Ali">
-                    <p>My dear student Yusif, your website is excellent. I wish you success <br> in life.</p>
-                    <h1>Vidadi Ali</h1>
-                    <span>Programming teacher</span>
-                </div>
-                <div class="cart card-2">
-                    <img src="WhatsApp Image 2026-04-18 at 23.09.52.jpeg" alt="Taleh Abdullayev">
-                    <p>My dear student Yusif, your website is excellent. I wish you success <br> in life.</p>
-                    <h1>Taleh Abdullayev</h1>
-                    <span>Programming teacher</span>
-                </div>
-                <div class="cart card-2">
-                    <img src="Screenshot 2025-06-19 221833.png" alt="Azizzade İlahe">
-                    <p>My dear student Yusif, your website is excellent. I wish you success <br> in life.</p>
-                    <h1>Azizzade İlahe</h1>
-                    <span>Subject Teacher</span>
-                </div>
-                <div class="cart card-2">
-                    <img src="Screenshot 2025-06-19 222222.png" alt="Abdullayeva Aruze">
-                    <p>My dear student Yusif, your website is excellent. I wish you success <br> in life.</p>
-                    <h1>Abdullayeva Aruze</h1>
-                    <span>Subject Teacher</span>
-                </div>
-                <div class="cart card-2">
-                    <img src="Screenshot 2025-06-19 223213.png" alt="Rahila Rahimova">
-                    <p>My dear student Yusif, your website is excellent. I wish you success <br> in life.</p>
-                    <h1>Rahila Rahimova</h1>
-                    <span>Subject Teacher</span>
-                </div>
-                <div class="cart card-2">
-                    <img src="Screenshot 2026-05-01 185149.png" alt="Zekiyye Nuriyeva">
-                    <p>My dear student Yusif, your website is excellent. I wish you success <br> in life.</p>
-                    <h1>Zekiyye Nuriyeva</h1>
-                    <span>Tutor Teacher</span>
-                </div>
-                <div class="cart card-2">
-                    <img src="Sonaxanim.png" alt="Sonaxanim Velixanova">
-                    <p>My dear student Yusif, your website is excellent. I wish you success <br> in life.</p>
-                    <h1>Sonaxanim Velixanova</h1>
-                    <span>Subject Teacher</span>
-                </div>
-            </div>
-        </div>
+        <div class="container-fluid wrapper" style="height: 60vh;">
+            <div class="carusel owl-carousel">
+                <div class="cart card-1">
+                    <img src="Screenshot 2025-05-30 014847.png" alt="Vidadi Ali">
+                    <p>My dear student Yusif, your website is excellent. I wish you success <br> in life.</p>
+                    <h1>Vidadi Ali</h1>
+                    <span>Programming teacher</span>
+                </div>
+                <div class="cart card-2">
+                    <img src="WhatsApp Image 2026-04-18 at 23.09.52.jpeg" alt="Taleh Abdullayev">
+                    <p>My dear student Yusif, your website is excellent. I wish you success <br> in life.</p>
+                    <h1>Taleh Abdullayev</h1>
+                    <span>Programming teacher</span>
+                </div>
+                <div class="cart card-2">
+                    <img src="Screenshot 2025-06-19 221833.png" alt="Azizzade İlahe">
+                    <p>My dear student Yusif, your website is excellent. I wish you success <br> in life.</p>
+                    <h1>Azizzade İlahe</h1>
+                    <span>Subject Teacher</span>
+                </div>
+                <div class="cart card-2">
+                    <img src="Screenshot 2025-06-19 222222.png" alt="Abdullayeva Aruze">
+                    <p>My dear student Yusif, your website is excellent. I wish you success <br> in life.</p>
+                    <h1>Abdullayeva Aruze</h1>
+                    <span>Subject Teacher</span>
+                </div>
+                <div class="cart card-2">
+                    <img src="Screenshot 2025-06-19 223213.png" alt="Rahila Rahimova">
+                    <p>My dear student Yusif, your website is excellent. I wish you success <br> in life.</p>
+                    <h1>Rahila Rahimova</h1>
+                    <span>Subject Teacher</span>
+                </div>
+                <div class="cart card-2">
+                    <img src="Screenshot 2026-05-01 185149.png" alt="Zekiyye Nuriyeva">
+                    <p>My dear student Yusif, your website is excellent. I wish you success <br> in life.</p>
+                    <h1>Zekiyye Nuriyeva</h1>
+                    <span>Tutor Teacher</span>
+                </div>
+                <div class="cart card-2">
+                    <img src="Sonaxanim.png" alt="Sonaxanim Velixanova">
+                    <p>My dear student Yusif, your website is excellent. I wish you success <br> in life.</p>
+                    <h1>Sonaxanim Velixanova</h1>
+                    <span>Subject Teacher</span>
+                </div>
+            </div>
+        </div>
 
-        <main class="main6" id="main6">
-            <div class="text3">
-                <h1>Latest posts from our blog</h1>
-                <span>You may be a skillful, effective employer but if you don’t trust your personnel and the opposite,
-                    then the chances of improving and expanding the business</span>
-            </div>
+        <main class="main6" id="main6">
+            <div class="text3">
+                <h1>Latest posts from our blog</h1>
+                <span>You may be a skillful, effective employer but if you don’t trust your personnel and the opposite,
+                    then the chances of improving and expanding the business</span>
+            </div>
 
-            <div class="blog-container">
-                <div class="blog-card">
-                    <img src="WhatsApp Image 2025-05-30 at 02.31.33.jpeg" alt="Blog Image">
-                    <div class="blog-meta">
-                        <div class="author">
-                            <img src="Gemini_Generated_Image_mk0j6mk0j6mk0j6m.png" alt="Author">
-                            <span>Yusif Jabarov</span>
-                        </div>
-                        <div class="meta">
-                            <span>26 May 2025</span>
-                            <span>♡ 15</span>
-                            <span>💬 04</span>
-                        </div>
-                    </div>
-                    <h3>BREAK THROUGH SELF DOUBT AND FEAR</h3>
-                    <p>Dream interpretation has many forms; it can be done for the sake of fun, hobby or can be taken up
-                        as a serious career.</p>
-                </div>
+            <div class="blog-container">
+                <div class="blog-card">
+                    <img src="WhatsApp Image 2025-05-30 at 02.31.33.jpeg" alt="Blog Image">
+                    <div class="blog-meta">
+                        <div class="author">
+                            <img src="Gemini_Generated_Image_mk0j6mk0j6mk0j6m.png" alt="Author">
+                            <span>Yusif Jabarov</span>
+                        </div>
+                        <div class="meta">
+                            <span>26 May 2025</span>
+                            <span>♡ 15</span>
+                            <span>💬 04</span>
+                        </div>
+                    </div>
+                    <h3>BREAK THROUGH SELF DOUBT AND FEAR</h3>
+                    <p>Dream interpretation has many forms; it can be done for the sake of fun, hobby or can be taken up
+                        as a serious career.</p>
+                </div>
 
-                <div class="blog-card">
-                    <img src="WhatsApp Image 2025-06-20 at 13.00.23.jpeg" alt="Blog Image">
-                    <div class="blog-meta">
-                        <div class="author">
-                            <img src="Gemini_Generated_Image_mk0j6mk0j6mk0j6m.png" alt="Author">
-                            <span>Yusif Jabarov</span>
-                        </div>
-                        <div class="meta">
-                            <span>8 March 2025</span>
-                            <span>♡ 15</span>
-                            <span>💬 04</span>
-                        </div>
-                    </div>
-                    <h3>Happy Women's Day, Goddess Ilaha Teacher</h3>
-                    <p>We congratulated our dear teacher Ilaha on the occasion of March 8th, International Women's Day.
-                    </p>
-                </div>
+                <div class="blog-card">
+                    <img src="WhatsApp Image 2025-06-20 at 13.00.23.jpeg" alt="Blog Image">
+                    <div class="blog-meta">
+                        <div class="author">
+                            <img src="Gemini_Generated_Image_mk0j6mk0j6mk0j6m.png" alt="Author">
+                            <span>Yusif Jabarov</span>
+                        </div>
+                        <div class="meta">
+                            <span>8 March 2025</span>
+                            <span>♡ 15</span>
+                            <span>💬 04</span>
+                        </div>
+                    </div>
+                    <h3>Happy Women's Day, Goddess Ilaha Teacher</h3>
+                    <p>We congratulated our dear teacher Ilaha on the occasion of March 8th, International Women's Day.
+                    </p>
+                </div>
 
-                <div class="blog-card">
-                    <img src="WhatsApp Image 2025-06-20 at 12.51.50.jpeg" alt="Blog Image">
-                    <div class="blog-meta">
-                        <div class="author">
-                            <img src="Gemini_Generated_Image_mk0j6mk0j6mk0j6m.png" alt="Author">
-                            <span>Yusif Jabarov</span>
-                        </div>
-                        <div class="meta">
-                            <span>7 May 2025</span>
-                            <span>♡ 15</span>
-                            <span>💬 04</span>
-                        </div>
-                    </div>
-                    <h3>Happy Birthday Taleh teacher</h3>
-                    <p>We sincerely congratulate you on your birthday, our valuable programming teacher, Taleh.</p>
-                </div>
+                <div class="blog-card">
+                    <img src="WhatsApp Image 2025-06-20 at 12.51.50.jpeg" alt="Blog Image">
+                    <div class="blog-meta">
+                        <div class="author">
+                            <img src="Gemini_Generated_Image_mk0j6mk0j6mk0j6m.png" alt="Author">
+                            <span>Yusif Jabarov</span>
+                        </div>
+                        <div class="meta">
+                            <span>7 May 2025</span>
+                            <span>♡ 15</span>
+                            <span>💬 04</span>
+                        </div>
+                    </div>
+                    <h3>Happy Birthday Taleh teacher</h3>
+                    <p>We sincerely congratulate you on your birthday, our valuable programming teacher, Taleh.</p>
+                </div>
 
-                <div class="blog-card">
-                    <img src="Vidadi ali.png" alt="Blog Image">
-                    <div class="blog-meta">
-                        <div class="author">
-                            <img src="Gemini_Generated_Image_mk0j6mk0j6mk0j6m.png" alt="Author">
-                            <span>Yusif Jabarov</span>
-                        </div>
-                        <div class="meta">
-                            <span>8 February 2026</span>
-                            <span>♡ 15</span>
-                            <span>💬 04</span>
-                        </div>
-                    </div>
-                    <h3>Welcome, Vidadi teacher</h3>
-                    <p>We are so happy that you have returned safe and sound. You were entrusted to the Motherland, and
-                        now you are entrusted to us. Welcome home, Vidadi teacher</p>
-                </div>
-            </div>
-        </main>
-    </section>
+                <div class="blog-card">
+                    <img src="Vidadi ali.png" alt="Blog Image">
+                    <div class="blog-meta">
+                        <div class="author">
+                            <img src="Gemini_Generated_Image_mk0j6mk0j6mk0j6m.png" alt="Author">
+                            <span>Yusif Jabarov</span>
+                        </div>
+                        <div class="meta">
+                            <span>8 February 2026</span>
+                            <span>♡ 15</span>
+                            <span>💬 04</span>
+                        </div>
+                    </div>
+                    <h3>Welcome, Vidadi teacher</h3>
+                    <p>We are so happy that you have returned safe and sound. You were entrusted to the Motherland, and
+                        now you are entrusted to us. Welcome home, Vidadi teacher</p>
+                </div>
+            </div>
+        </main>
+    </section>
 
-    <footer class="footer" id="footer">
-        <div class="footer-div">
-            <div class="footer-column">
-                <h3>Newsletter</h3>
-                <p>Stay updated with our latest trends</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter Email Address">
-                    <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
-                </form>
-            </div>
+    <footer class="footer" id="footer">
+        <div class="footer-div">
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Stay updated with our latest trends</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter Email Address">
+                    <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+                </form>
+            </div>
 
-            <div class="footer-column">
-                <h3>Follow Me</h3>
-                <p>Let us be social</p>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/cabarov_buzovna?igshMW56czRkNmdscGw1NA"><i
-                            class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@cabarov_buzovna?_t=ZS-8xRX9qZPOCX&_r=1"><i
-                            class="fa-brands fa-tiktok"></i></a>
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+            <div class="footer-column">
+                <h3>Follow Me</h3>
+                <p>Let us be social</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/cabarov_buzovna?igshMW56czRkNmdscGw1NA"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@cabarov_buzovna?_t=ZS-8xRX9qZPOCX&_r=1"><i
+                            class="fa-brands fa-tiktok"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <script>
+        // 1. Owl Carousel Initialization
+        $('.carusel').owlCarousel({
+            margin: 10,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            smartSpeed: 1000,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                1000: {
+                    items: 2,
+                    nav: false
+                }
+            }
+        });
+
+        // 2. Mobile Menu Toggle & Scroll Fix
+        $(".nav-bars").click(function () {
+            $(".nav-menu").toggleClass("active");
+            $("body").toggleClass("menu-open");
+            
+            if ($("body").hasClass("menu-open")) {
+                $("body").css("overflow", "hidden");
+            } else {
+                $("body").css("overflow", "auto");
+            }
+        });
+
+        $(".close-menu, .nav-menu a").click(function () {
+            $(".nav-menu").removeClass("active");
+            $("body").removeClass("menu-open");
+            $("body").css("overflow", "auto");
+        });
+
+        // 3. Dark Mode Toggle & Icon Switch
+        $(".theme-btn").click(function () {
+            $("body").toggleClass("dark");
+
+            if ($("body").hasClass("dark")) {
+                $(".theme-btn i")
+                    .removeClass("fa-moon")
+                    .addClass("fa-sun");
+            } else {
+                $(".theme-btn i")
+                    .removeClass("fa-sun")
+                    .addClass("fa-moon");
+            }
+        });
+
+        // 4. Header Shrink on Scroll
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 50) {
+                $("header").css({
+                    padding: "10px 20px"
+                });
+            } else {
+                $("header").css({
+                    padding: "20px"
+                });
+            }
+        });
+    </script>
 
 </body>
 
