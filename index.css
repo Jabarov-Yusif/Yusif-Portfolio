@@ -610,30 +610,48 @@ a>.overlay {
 }
 
 /* =========================================
-   WHATSAPP SÜRMƏLİ DÜYMƏ
+   ŞIQ WHATSAPP SÜRMƏLİ DÜYMƏ DİZAYNI
    ========================================= */
-.whatsapp-btn {
+.whatsapp-float {
     position: fixed;
     bottom: 30px;
     right: 30px;
     background-color: #25d366;
     color: white !important;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 9998;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.whatsapp-float i {
+    font-size: 26px;
+    color: white !important;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 35px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    z-index: 9998;
-    transition: 0.3s ease;
 }
 
-.whatsapp-btn:hover {
-    transform: scale(1.1);
+.whatsapp-float .whatsapp-text {
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: white !important;
+    font-family: inherit;
+    letter-spacing: 0.5px;
+}
+
+.whatsapp-float:hover {
     background-color: #20ba5a;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
 }
 
 /* =========================================
@@ -803,6 +821,15 @@ body.dark span {
     .main4>.text1 {
         padding: 25px;
         text-align: center;
+    }
+
+    /* Telefonda WhatsApp düyməsini yalnız dairəvi ikon edirik ki, ekranı tutmasın */
+    .whatsapp-float {
+        padding: 12px;
+        border-radius: 50%;
+    }
+    .whatsapp-float .whatsapp-text {
+        display: none;
     }
 }
 
