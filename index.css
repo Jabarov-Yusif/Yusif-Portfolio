@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,7 +8,6 @@
 html {
     scroll-behavior: smooth;
 }
-
 
 header {
     position: fixed;
@@ -79,12 +78,12 @@ header .nav-bars {
     transition: 0.2s;
 }
 
-.nav-logo>h1:hover {
+.nav-logo>h1 {
     cursor: pointer;
     color: #8490ff;
 }
 
-header>.nav-texts>ul>li>a:hover {
+header>.nav-texts>ul>li>a {
     cursor: pointer;
     color: #8490ff;
     transform: scale(2);
@@ -128,7 +127,7 @@ header>.nav-texts>ul>li>a:hover {
     transition: 0.5s;
 }
 
-.img-div>img:hover {
+.img-div>img {
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -154,7 +153,7 @@ header>.nav-texts>ul>li>a:hover {
     transition: 0.5s;
 }
 
-.main1>.divson>button:hover {
+.main1>.divson>button {
     cursor: pointer;
     box-shadow: 6px 6px 6px rgb(75, 160, 245);
     transform: scale(1.1);
@@ -191,7 +190,7 @@ i {
     object-fit: fill;
 }
 
-.img-div2>img:hover {
+.img-div2>img {
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -230,7 +229,7 @@ i {
     transition: 0.5s;
 }
 
-.main2>.text-div>button:hover {
+.main2>.text-div>button {
     cursor: pointer;
     box-shadow: 6px 6px 6px rgb(75, 160, 245);
     transform: scale(1.1);
@@ -300,7 +299,7 @@ i {
     font-size: 1rem;
 }
 
-.div1>div:hover {
+.div1>div {
     cursor: pointer;
     color: #818df9;
     transform: scale(1.1);
@@ -381,7 +380,7 @@ a>.overlay {
     border-radius: 10px;
 }
 
-.main4>.big-div>div:hover a>.overlay {
+.main4>.big-div>div a>.overlay {
     opacity: 0.5;
 }
 
@@ -401,7 +400,7 @@ a>.overlay {
     transition: transform 0.3s ease;
 }
 
-.blog-card:hover {
+.blog-card {
     transform: translateY(-5px);
 }
 
@@ -447,7 +446,7 @@ a>.overlay {
     color: #222;
 }
 
-.blog-card h3:hover {
+.blog-card h3 {
     cursor: pointer;
     color: #818df9;
     transition: 0.3s;
@@ -539,7 +538,7 @@ a>.overlay {
     padding: 2px;
 }
 
-.social-icons a:hover {
+.social-icons a {
     color: #7d89fa;
 }
 
@@ -575,7 +574,7 @@ a>.overlay {
     color: #777777;
 }
 
-.carusel .cart:hover {
+.carusel .cart {
     cursor: pointer;
     color: #818df9;
     transition: 0.3s;
@@ -612,14 +611,14 @@ a>.overlay {
 
 /* =========================================
    MOBILE MENU (Düzəldilmiş və təkəlləşdirilmiş hissə)
-   ========================================= */
+   ========================================= /
 .nav-menu {
     width: 300px;
     height: 100vh;
     background-color: #000;
     position: fixed;
     top: 0;
-    left: -300px; /* Başlanğıcda ekranın solunda tam gizlidir */
+    left: -300px; / Başlanğıcda ekranın solunda tam gizlidir */
     z-index: 9999;
     transition: 0.4s ease-in-out;
     overflow-y: auto;
@@ -646,7 +645,7 @@ a>.overlay {
     transition: 0.3s;
 }
 
-.nav-menu>ul>li>a:hover {
+.nav-menu>ul>li>a {
     cursor: pointer;
     color: #8490ff;
 }
