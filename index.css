@@ -1,3 +1,4 @@
+```css
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +26,7 @@ header {
     padding: 20px;
 }
 
-header>.nav-texts>ul {
+header > .nav-texts > ul {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,7 +44,7 @@ header>.nav-texts>ul {
     margin-top: 5px;
 }
 
-header>.nav-texts>ul>li>a {
+header > .nav-texts > ul > li > a {
     font-size: 14px;
     font-weight: 570;
     color: #434343;
@@ -53,7 +54,7 @@ header>.nav-texts>ul>li>a {
     position: relative;
 }
 
-header>.nav-texts>ul>li>a::after {
+header > .nav-texts > ul > li > a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -64,7 +65,7 @@ header>.nav-texts>ul>li>a::after {
     transition: 0.4s;
 }
 
-header>.nav-texts>ul>li>a:hover::after {
+header > .nav-texts > ul > li > a:hover::after {
     width: 100%;
 }
 
@@ -72,18 +73,18 @@ header .nav-bars {
     display: none;
 }
 
-.nav-logo>h1 {
+.nav-logo > h1 {
     font-size: 1.3rem;
     color: rgb(132, 132, 132);
     transition: 0.2s;
 }
 
-.nav-logo>h1:hover {
+.nav-logo > h1:hover {
     cursor: pointer;
     color: #8490ff;
 }
 
-header>.nav-texts>ul>li>a:hover {
+header > .nav-texts > ul > li > a:hover {
     cursor: pointer;
     color: #8490ff;
     transform: scale(2);
@@ -107,7 +108,7 @@ header>.nav-texts>ul>li>a:hover {
     padding: 50px;
 }
 
-.main1>.divson {
+.main1 > .divson {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -119,7 +120,7 @@ header>.nav-texts>ul>li>a:hover {
     text-align: end;
 }
 
-.img-div>img {
+.img-div > img {
     object-fit: cover;
     width: 70%;
     height: 70%;
@@ -127,22 +128,22 @@ header>.nav-texts>ul>li>a:hover {
     transition: 0.5s;
 }
 
-.img-div>img:hover {
+.img-div > img:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
 
-.main1>.divson>h1 {
+.main1 > .divson > h1 {
     margin-top: 15px;
     font-size: 2.4rem;
 }
 
-.main1>.divson>span {
+.main1 > .divson > span {
     font-size: 1rem;
     color: #777777;
 }
 
-.main1>.divson>button {
+.main1 > .divson > button {
     margin-top: 20px;
     width: 151px;
     height: 43px;
@@ -153,13 +154,13 @@ header>.nav-texts>ul>li>a:hover {
     transition: 0.5s;
 }
 
-.main1>.divson>button:hover {
+.main1 > .divson > button:hover {
     cursor: pointer;
     box-shadow: 6px 6px 6px rgb(75, 160, 245);
     transform: scale(1.1);
 }
 
-.main1>.divson>p {
+.main1 > .divson > p {
     color: #222222;
     font-weight: 700;
     font-size: 1rem;
@@ -182,7 +183,7 @@ i {
     display: flex;
 }
 
-.img-div2>img {
+.img-div2 > img {
     width: 70%;
     height: 45vh;
     border-radius: 50%;
@@ -190,34 +191,34 @@ i {
     object-fit: fill;
 }
 
-.img-div2>img:hover {
+.img-div2 > img:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
 
-.main2>.text-div {
+.main2 > .text-div {
     width: 50%;
     display: flex;
     flex-direction: column;
     gap: 13px;
 }
 
-.main2>.text-div>span {
+.main2 > .text-div > span {
     color: #777777;
     font-size: 1.2rem;
 }
 
-.main2>.text-div>p {
+.main2 > .text-div > p {
     font-size: 1.1rem;
     font-weight: 700;
 }
 
-.main2>.text-div>h1 {
+.main2 > .text-div > h1 {
     margin-top: 20px;
     font-size: 1.5rem;
 }
 
-.main2>.text-div>button {
+.main2 > .text-div > button {
     margin-top: 24px;
     width: 151px;
     height: 43px;
@@ -229,7 +230,7 @@ i {
     transition: 0.5s;
 }
 
-.main2>.text-div>button:hover {
+.main2 > .text-div > button:hover {
     cursor: pointer;
     box-shadow: 6px 6px 6px rgb(75, 160, 245);
     transform: scale(1.1);
@@ -246,14 +247,14 @@ i {
     text-align: center;
 }
 
-.text>h1 {
+.text > h1 {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.6rem;
 }
 
-.text>span {
+.text > span {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -272,7 +273,7 @@ i {
     gap: 30px;
 }
 
-.div1>div {
+.div1 > div {
     width: 30%;
     padding: 25px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
@@ -280,7 +281,7 @@ i {
     transition: 0.2s;
 }
 
-.div1>div>h1 {
+.div1 > div > h1 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -288,18 +289,18 @@ i {
     font-size: 1.3rem;
 }
 
-.div1>div>i {
+.div1 > div > i {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.div1>div>span {
+.div1 > div > span {
     color: #777777;
     font-size: 1rem;
 }
 
-.div1>div:hover {
+.div1 > div:hover {
     cursor: pointer;
     color: #818df9;
     transform: scale(1.1);
@@ -309,7 +310,7 @@ i {
     width: 100%;
 }
 
-.main4>.text1 {
+.main4 > .text1 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -318,16 +319,16 @@ i {
     gap: 15px;
 }
 
-.main4>.text1>h1 {
+.main4 > .text1 > h1 {
     font-size: 2.2rem;
 }
 
-.main4>.text1>span {
+.main4 > .text1 > span {
     font-size: 1rem;
     color: #777777;
 }
 
-.main4>.big-div {
+.main4 > .big-div {
     width: 100%;
     display: flex;
     align-items: center;
@@ -335,24 +336,25 @@ i {
     gap: 10px;
 }
 
-.main4>.big-div>div {
+.main4 > .big-div > div {
     width: 30%;
     position: relative;
 }
 
-.main4>.big-div>div>.card-img {
+.main4 > .big-div > div > .card-img {
     width: 100%;
     height: 40vh;
     position: relative;
 }
 
-.main4>.big-div>div>.card-img img {
+.main4 > .big-div > div > .card-img img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    object-fit: cover;
 }
 
-.main4>.big-div>div>h1 {
+.main4 > .big-div > div > h1 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -360,14 +362,14 @@ i {
     color: black;
 }
 
-.main4>.big-div>div>span {
+.main4 > .big-div > div > span {
     display: flex;
     align-items: center;
     justify-content: center;
     color: #777777;
 }
 
-a>.overlay {
+a > .overlay {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -380,7 +382,7 @@ a>.overlay {
     border-radius: 10px;
 }
 
-.main4>.big-div>div:hover a>.overlay {
+.main4 > .big-div > div:hover a > .overlay {
     opacity: 0.5;
 }
 
@@ -466,11 +468,11 @@ a>.overlay {
     padding: 20px;
 }
 
-.text3>span {
+.text3 > span {
     padding: 20px;
 }
 
-.text3>h1 {
+.text3 > h1 {
     font-size: 2.2rem;
 }
 
@@ -494,13 +496,13 @@ a>.overlay {
     min-width: 250px;
 }
 
-.footer-column>h3 {
+.footer-column > h3 {
     color: #fff;
     margin-bottom: 20px;
     font-size: 1.2rem;
 }
 
-.footer-column>p {
+.footer-column > p {
     line-height: 1.6;
     font-size: 1rem;
     color: #aaa;
@@ -547,6 +549,7 @@ a>.overlay {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 60vh;
 }
 
 .wrapper .carusel {
@@ -570,7 +573,7 @@ a>.overlay {
     transition: 0.5s;
 }
 
-.carusel .cart>p {
+.carusel .cart > p {
     color: #777777;
 }
 
@@ -609,54 +612,11 @@ a>.overlay {
     transition: all 0.3s ease;
 }
 
-/* =========================================
-   ŞIQ WHATSAPP SÜRMƏLİ DÜYMƏ DİZAYNI
-   ========================================= */
-.whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366;
-    color: white !important;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 20px;
-    border-radius: 50px;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-    z-index: 9998;
-    transition: all 0.4s ease;
-    text-decoration: none;
-    overflow: hidden;
-}
-
-.whatsapp-float i {
-    font-size: 26px;
-    color: white !important;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.whatsapp-float .whatsapp-text {
-    font-size: 14px;
-    font-weight: 600;
-    white-space: nowrap;
-    color: white !important;
-    font-family: inherit;
-    letter-spacing: 0.5px;
-}
-
-.whatsapp-float:hover {
-    background-color: #20ba5a;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
-}
 
 /* =========================================
-   MOBİL MENYU
-   ========================================= */
+   MOBILE MENU
+========================================= */
+
 .nav-menu {
     width: 300px;
     height: 100vh;
@@ -674,13 +634,13 @@ a>.overlay {
     left: 0;
 }
 
-.nav-menu>ul {
+.nav-menu > ul {
     list-style: none;
     text-align: left;
     padding-top: 40px;
 }
 
-.nav-menu>ul>li>a {
+.nav-menu > ul > li > a {
     display: flex;
     flex-direction: column;
     margin: 30px;
@@ -690,7 +650,7 @@ a>.overlay {
     transition: 0.3s;
 }
 
-.nav-menu>ul>li>a:hover {
+.nav-menu > ul > li > a:hover {
     cursor: pointer;
     color: #8490ff;
 }
@@ -703,9 +663,11 @@ body.menu-open {
     overflow: hidden;
 }
 
+
 /* =========================================
    DARK MODE
-   ========================================= */
+========================================= */
+
 body.dark {
     background: #121212;
     color: white;
@@ -741,10 +703,51 @@ body.dark span {
     color: #d0d0d0 !important;
 }
 
+
 /* =========================================
-   MEDIA QUERIES
-   ========================================= */
-@media(max-width:991px) {
+   WHATSAPP BUTTON
+========================================= */
+
+.whatsapp-btn {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 60px;
+    height: 60px;
+
+    background-color: #25D366;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+
+    z-index: 9998;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+
+    transition: 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    color: white;
+
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
     header .nav-texts {
         display: none;
     }
@@ -753,19 +756,22 @@ body.dark span {
         display: block;
     }
 
-    .div1>div {
+    .div1 > div {
         width: 47%;
     }
+
 }
 
+
 @media (max-width: 768px) {
+
     .big-div {
         display: flex;
         flex-direction: column;
         padding: 15px;
     }
 
-    .main4>.big-div>div {
+    .main4 > .big-div > div {
         width: 100%;
     }
 
@@ -776,7 +782,7 @@ body.dark span {
         justify-content: center;
     }
 
-    .main1>.divson {
+    .main1 > .divson {
         width: 100%;
         display: flex;
         align-items: center;
@@ -796,7 +802,7 @@ body.dark span {
         flex-direction: column-reverse;
     }
 
-    .main2>.img-div2 {
+    .main2 > .img-div2 {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -804,37 +810,44 @@ body.dark span {
         width: 100%;
     }
 
-    .main2>.text-div {
+    .main2 > .text-div {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
         text-align: center;
     }
+
 }
 
-@media(max-width:576px) {
-    .div1>div {
+
+@media (max-width: 576px) {
+
+    .div1 > div {
         width: 100%;
     }
 
-    .main4>.text1 {
+    .main4 > .text1 {
         padding: 25px;
         text-align: center;
     }
 
-    /* Telefonda WhatsApp düyməsini yalnız dairəvi ikon edirik ki, ekranı tutmasın */
-    .whatsapp-float {
-        padding: 12px;
-        border-radius: 50%;
+    .whatsapp-btn {
+        width: 52px;
+        height: 52px;
+        right: 18px;
+        bottom: 18px;
+        font-size: 28px;
     }
-    .whatsapp-float .whatsapp-text {
-        display: none;
-    }
+
 }
 
-@media(max-width:380px) {
-    .main2>.img-div2>img {
+
+@media (max-width: 380px) {
+
+    .main2 > .img-div2 > img {
         height: 200px;
     }
+
 }
+```
