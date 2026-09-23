@@ -940,7 +940,7 @@
                     <div class="card-img">
                         <img src="https://ecampusontario.pressbooks.pub/app/uploads/sites/2109/2021/11/programming-gb0e197598_1920.jpg"
                             alt="Project 3">
-                        <a href="http://yusifmobile.great-site.net" target="_blank" style="text-decoration: none; color: inherit;">>
+                        <a href="http://yusifmobile.great-site.net" target="_blank" style="text-decoration: none; color: inherit;">
                             <div class="overlay"></div>
                         </a>
                     </div>
@@ -1072,108 +1072,11 @@
                         </div>
                     </div>
                     <h3>Welcome, Vidadi teacher</h3>
-                    <p>We are so happy that you have returned safe and sound. You were entrusted to the Motherland, and
-                        now you are entrusted to us. Welcome home, Vidadi teacher</p>
+                    <p>We are so happy that you joined our center and shared your valuable knowledge with us.</p>
                 </div>
             </div>
         </main>
     </section>
-
-    <footer class="footer" id="footer">
-        <div class="footer-div">
-            <div class="footer-column">
-                <h3>Newsletter</h3>
-                <p>Stay updated with our latest trends</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter Email Address">
-                    <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
-                </form>
-            </div>
-
-            <div class="footer-column">
-                <h3>Follow Me</h3>
-                <p>Let us be social</p>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/cabarov_buzovna?igshMW56czRkNmdscGw1NA"><i
-                            class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@cabarov_buzovna?_t=ZS-8xRX9qZPOCX&_r=1"><i
-                            class="fa-brands fa-tiktok"></i></a>
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    
-    <script>
-        // 1. Owl Carousel Initialization
-        $('.carusel').owlCarousel({
-            margin: 10,
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 3000,
-            autoplayHoverPause: true,
-            smartSpeed: 1000,
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: false
-                },
-                1000: {
-                    items: 2,
-                    nav: false
-                }
-            }
-        });
-
-        // 2. Mobile Menu Toggle & Scroll Fix
-        $(".nav-bars").click(function () {
-            $(".nav-menu").toggleClass("active");
-            $("body").toggleClass("menu-open");
-            
-            if ($("body").hasClass("menu-open")) {
-                $("body").css("overflow", "hidden");
-            } else {
-                $("body").css("overflow", "auto");
-            }
-        });
-
-        $(".close-menu, .nav-menu a").click(function () {
-            $(".nav-menu").removeClass("active");
-            $("body").removeClass("menu-open");
-            $("body").css("overflow", "auto");
-        });
-
-        // 3. Dark Mode Toggle & Icon Switch
-        $(".theme-btn").click(function () {
-            $("body").toggleClass("dark");
-
-            if ($("body").hasClass("dark")) {
-                $(".theme-btn i")
-                    .removeClass("fa-moon")
-                    .addClass("fa-sun");
-            } else {
-                $(".theme-btn i")
-                    .removeClass("fa-sun")
-                    .addClass("fa-moon");
-            }
-        });
-
-        // 4. Header Shrink on Scroll
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > 50) {
-                $("header").css({
-                    padding: "10px 20px"
-                });
-            } else {
-                $("header").css({
-                    padding: "20px"
-                });
-            }
-        });
-    </script>
 
 </body>
 
